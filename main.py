@@ -43,10 +43,7 @@ def get_page_source(url):
                 return None
 
         except Exception as e:
-            print(f"Error while checking for CAPTCHA/blockage: {e}")
-            with open("page_source.html", "w", encoding="utf-8") as file:
-                file.write(driver.page_source)
-            print("Page source saved for inspection.")
+            print("")
         try:
             pop_up = driver.find_element(By.XPATH,
                                          "//div[@class='dd-privacy-allow mosaic-provider-app-download-promos-service-1h5ugo2 eu4oa1w0']")
